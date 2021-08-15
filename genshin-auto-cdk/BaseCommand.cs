@@ -5,7 +5,7 @@
         internal abstract void OnHotKey();
 
         internal abstract void Start();
-        
+
         internal static int GetPixelColor(int x, int y)
         {
             var hDc = WinApi.GetDC(0);

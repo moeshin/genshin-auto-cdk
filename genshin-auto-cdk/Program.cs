@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using System.Security.Principal;
 
 namespace genshin_auto_cdk
 {
@@ -18,10 +19,15 @@ namespace genshin_auto_cdk
                 return;
             }
 
+            if (!IsAdministrator())
+            {
+                Console.WriteLine("需要管理员权限");
+                return;
+            }
+
             Config = Config.Get();
 
             BaseCommand baseCommand;
-
             switch (command)
             {
                 case "init":
@@ -85,6 +91,13 @@ namespace genshin_auto_cdk
 .\genshin-auto-cdk.exe init             初始化、校准
 .\genshin-auto-cdk.exe read             从终端读取 CDK 列表，输入完按 Ctrl + Z 或 F6 然后按回车开始
 .\genshin-auto-cdk.exe file [list.txt]  从文件读取 CDK 列表");
+        }
+
+        private static bool IsAdministrator()
+        {
+            var identity = WindowsIdentity.GetCurrent();
+            var principal = new WindowsPrincipal(identity);
+            return principal.IsInRole(WindowsBuiltInRole.Administrator);
         }
     }
 }

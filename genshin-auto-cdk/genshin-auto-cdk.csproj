@@ -61,5 +61,10 @@
     <Target Name="AfterBuild">
     </Target>
     -->
-
+    <ItemGroup>
+        <CmdFiles Include="cmd\*.*" />
+    </ItemGroup>
+    <Target Name="AfterBuild">
+        <Copy SourceFiles="@(CmdFiles)" DestinationFolder="$(OutputPath)" />
+    </Target>
 </Project>
