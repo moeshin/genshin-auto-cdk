@@ -86,11 +86,11 @@ namespace genshin_auto_cdk
 
         private void InitList(string text)
         {
-            var match = Regex.Match(text, "\\b[a-zA-Z\\d]{12}\\b");
+            var match = Regex.Match(text, @"\d*([a-zA-Z\d]{12})");
             var list = new List<string>();
             while (match.Success)
             {
-                list.Add(match.Value);
+                list.Add(match.Groups[1].Value);
                 match = match.NextMatch();
             }
             Console.WriteLine(string.Join("\n", list));

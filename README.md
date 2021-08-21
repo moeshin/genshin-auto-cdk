@@ -1,5 +1,7 @@
 ﻿# 原神自动兑换
 
+运行时需要管理员权限，可以右击 `*.cmd` 脚本选择「以管理员身份运行」。
+
 ```text
 .\genshin-auto-cdk.exe init             初始化、校准
 .\genshin-auto-cdk.exe read             从终端读取 CDK 列表，输入完按 Ctrl + Z 或 F6 然后按回车开始
