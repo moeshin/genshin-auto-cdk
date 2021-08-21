@@ -1,6 +1,9 @@
 ﻿# 原神自动兑换
 
-运行时需要管理员权限，可以右击 `*.cmd` 脚本选择「以管理员身份运行」。
+[![Release](https://img.shields.io/github/v/release/moeshin/genshin-auto-cdk?style=flat-square)](https://github.com/moeshin/genshin-auto-cdk/releases/latest)
+[![License](https://img.shields.io/github/license/moeshin/genshin-auto-cdk?style=flat-square)](https://github.com/moeshin/genshin-auto-cdk/blob/master/LICENSE)
+
+运行时需要 **管理员权限**，可以右击 `*.cmd` 脚本选择「**以管理员身份运行**」。
 
 ```text
 .\genshin-auto-cdk.exe init             初始化、校准
@@ -17,7 +20,7 @@
 
 ### 配置文件 `Config.json5`
 
-默认参数是 1920x1080 下的
+默认参数是 `1920x1080` 下的
 
 ```json5
 {
